@@ -31,8 +31,15 @@ class CastTest {
     @Test
     void devera_retornar_valor_padrao_para_Strings() throws IllegalAccessException, InstantiationException, InvocationTargetException {
         Cast<String> objectCast = Cast.newInstance();
-         String retorno = objectCast.castValor(valor, String.class);
+        String retorno = objectCast.castValor(valor, String.class);
         assertThat(retorno, is(Matchers.emptyString()));
+    }
+
+    @Test
+    void devera_retornar_valor_padrao_para_Long() throws IllegalAccessException, InstantiationException, InvocationTargetException {
+        Cast<Long> objectCast = Cast.newInstance();
+        Long retorno = objectCast.castValor(valor, Long.class);
+        assertThat(retorno, is(equalTo(0l)));
     }
 
 
